@@ -1,11 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { RecoilRoot } from 'recoil';
+import Calculator from './components/Calculator';
 
 export default function App() {
   return (
+    <RecoilRoot>
+      <RecoilApp />
+    </RecoilRoot>
+  );
+}
+
+function RecoilApp() {
+  return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Calculator />
     </View>
   );
 }
@@ -13,7 +22,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'green',
     alignItems: 'center',
     justifyContent: 'center',
   },
